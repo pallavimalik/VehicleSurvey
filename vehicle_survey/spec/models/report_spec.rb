@@ -16,36 +16,6 @@ describe Report do
       actual_count.should == 8
     end
 
-    it 'should return vehicle count by direction' do
-      vehicle_list = [[[98186, 98333],
-                       [499718, 499886],
-                       [1016488, 1016648],
-                       [2146213, 2146349],
-                       [2211004, 2211128],
-                       [2695213, 2695369],
-                       [3318189, 3318355],
-                       [7051179, 7051310]],
-                      [[638379, 638520],
-                       [1058535, 1058659],
-                       [1201386, 1201539],
-                       [1624044, 1624188],
-                       [1782481, 1782660],
-                       [2422884, 2423013],
-                       [2597513, 2597667],
-                       [3280268, 3280386],
-                       [4021664, 4021806],
-                       [4455194, 4455327],
-                       [5060792, 5060911],
-                       [5411133, 5411294],
-                       [5508987, 5509166],
-                       [5810441, 5810600],
-                       [6383154, 6383348]]]
-
-      actual_count = Report.total_vehicle_count_by_dir vehicle_list
-      expected_count = {Northbound: 8, Southbound: 15}
-      actual_count.should == expected_count
-    end
-
     it 'should return a list of vehicle in the given time duration per day' do
       time_period = 12 * 60 * 60 * 1000
       vehicle_list = [[[98186, 98333],

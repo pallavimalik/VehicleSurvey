@@ -2,7 +2,7 @@ class Report < ActiveRecord::Base
 
   def self.vehicle_count_report(vehicle_list)
     total_vehicle_count = total_vehicle_count(vehicle_list[0]) + total_vehicle_count(vehicle_list[1])
-    total_vehicle_count_by_dir = total_vehicle_count_by_dir vehicle_list
+    total_vehicle_count_by_dir = {Northbound: total_vehicle_count(vehicle_list[0]), Southbound: total_vehicle_count(vehicle_list[1])}
 
     vehicle_morn_vs_eve, vehicle_per_fifteen_min, vehicle_per_half_hr, vehicle_per_hr, vehicle_per_twenty_min = group_by_period(vehicle_list)
 
@@ -100,10 +100,6 @@ class Report < ActiveRecord::Base
 
   def self.total_vehicle_count(vehicle_list)
     vehicle_list.count
-  end
-
-  def self.total_vehicle_count_by_dir(vehicle_list)
-    {Northbound: vehicle_list[0].size, Southbound: vehicle_list[1].size}
   end
 
   def self.group_by_time_period(vehicle_list, time_period_duration)

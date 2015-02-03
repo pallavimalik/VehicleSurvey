@@ -18,7 +18,6 @@ class FileParser < ActiveRecord::Base
           dirs[direction] << parsed_input
           parsed_input = []
         elsif input_size == 4 and direction != DIR_B
-          puts 'Parse error'
           parsed_input = []
         end
       elsif (input_size % 2) == 1 and direction == DIR_B
