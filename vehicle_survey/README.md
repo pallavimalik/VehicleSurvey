@@ -17,3 +17,7 @@ Hit the local Server
 http://localhost:3000
 ```
 
+Run Unit Tests
+```
+$ rspec
+```
