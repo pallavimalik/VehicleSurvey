@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <title>app/controllers/reports_controller.rb</title>
+    <link href="./assets/0.2.3/screen.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="./assets/0.2.3/print.css" media="print" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <script type="text/javascript" src="./assets/0.2.3/rcov.js"></script>
+  </head>
+  <body>
+    <h1>Vehicle survey C0 Coverage Information - Simploco - RCov</h1>
+    <h2>app/controllers/reports_controller.rb</h2>
+
+    <div class="report_table_wrapper">
+      <table class='report' id='report_table'>
+        <thead>
+          <tr>
+            <th class="left_align">Name</th>
+            <th class="right_align">Total Lines</th>
+            <th class="right_align">Lines of Code</th>
+            <th class="left_align">Total Coverage</th>
+            <th class="left_align">Code Coverage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="left_align"><a href="app-controllers-reports_controller_rb.html">app/controllers/reports_controller.rb</a></td>
+            <td class='right_align'><tt>29</tt></td>
+            <td class='right_align'><tt>16</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
+      <div class="percent_graph">
+        <div class="covered" style="width:100px"></div>
+        <div class="uncovered" style="width:0px"></div>
+      </div></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
+      <div class="percent_graph">
+        <div class="covered" style="width:100px"></div>
+        <div class="uncovered" style="width:0px"></div>
+      </div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Key</h3>
+
+    <div class="key"><pre><span class='marked'>Code reported as executed by Ruby looks like this...</span><span class='marked1'>and this: this line is also marked as covered.</span><span class='inferred'>Lines considered as run by rcov, but not reported by Ruby, look like this,</span><span class='inferred1'>and this: these lines were inferred by rcov (using simple heuristics).</span><span class='uncovered'>Finally, here's a line marked as not executed.</span></pre></div>
+
+    <h3>Coverage Details</h3>
+
+    <table class="details">
+      <tbody>
+        <tr class="marked">
+          <td><pre><a name="line2">2</a> class ReportsController &lt; ApplicationController</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line3">3</a>   before_filter :parse_file</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line4">4</a>   before_filter :vehicle_count_by_direction, only: :peak_volume_times</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line5">5</a> </pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line6">6</a>   def vehicle_count_by_direction</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line7">7</a>     @vehicle_count = Report.vehicle_count_report @vehicle_list</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line8">8</a>   end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line9">9</a> </pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line10">10</a>   def distance_between_cars</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line11">11</a>     @distance_report = Report.distance_report_per_session(@vehicle_list)</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line12">12</a>     @distance_per_day_report = Report.distance_report_per_day(@distance_report)</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line13">13</a>   end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line14">14</a> </pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line15">15</a>   def traffic_speed_distribution</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line16">16</a>     @speed_report = Report.speed_report_per_session @vehicle_list</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line17">17</a>     @speed_per_day_report = Report.speed_report_per_day(@speed_report)</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line18">18</a>   end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line19">19</a> </pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line20">20</a>   def peak_volume_times</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line21">21</a>     @peak_volume_report = Report.peak_volume_time_report @vehicle_count</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line22">22</a>   end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line23">23</a> </pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line24">24</a>   private</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line25">25</a> </pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line26">26</a>   def parse_file</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line27">27</a>     @vehicle_list = FileParser.read_file(&#39;lib/stubs/Vehicle Survey Coding Challenge sample data.txt&#39;)</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line28">28</a>   end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line29">29</a> </pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line30">30</a> end</pre></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Generated on 2015-02-02 21:34:51 +0530 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.2.3</a></p>
+
+  </body>
+</html>
