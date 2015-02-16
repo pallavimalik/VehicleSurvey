@@ -1,6 +1,4 @@
 class FileParser < ActiveRecord::Base
-  include ApplicationHelper
-
   DIR_A = 0
   DIR_B = 1
 
