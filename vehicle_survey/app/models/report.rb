@@ -1,4 +1,4 @@
-class Report < ActiveRecord::Base
+class Report
 
   def self.vehicle_count_report(vehicle_list)
     total_vehicle_count = total_vehicle_count(vehicle_list[0]) + total_vehicle_count(vehicle_list[1])

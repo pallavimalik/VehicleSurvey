@@ -1,4 +1,4 @@
-class FileParser < ActiveRecord::Base
+class FileParser
   DIR_A = 0
   DIR_B = 1
 
