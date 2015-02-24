@@ -33,4 +33,8 @@ describe FileParser do
   it 'should separate direction from seconds' do
     FileParser.parse_record('A98186').should == [0, 98186]
   end
+
+  it 'should return unexpected record b exception' do
+    expect { FileParser.read_file 'lib/stubs/Vehicle_Survey_Exception.txt' }.to raise_error(FileParseException::UnexpectedRecord)
+  end
 end
